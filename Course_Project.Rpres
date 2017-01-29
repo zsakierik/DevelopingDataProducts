@@ -1,0 +1,48 @@
+Course Project: Shiny Application and Reproducible Pitch
+========================================================
+author: Erik Zsáki
+date:   2017-01-29
+autosize: true
+
+```{r echo=FALSE}
+library(fpc)
+```
+
+Overview
+========================================================
+
+This was built for the course Developing Data Products as part of the Coursera Data Science Specialization.
+
+The shiny app developed for this assignment is avalilable at: https://zsakierik.shinyapps.io/Course_Project/
+
+The source codes of ui.R and server.R and also Rpresentation are available on the GitHub repo: https://github.com/zsakierik/DevelopingDataProducts/tree/master/Course_Project
+
+
+Iris Dataset
+========================================================
+```{r echo=FALSE}
+head(iris[,3:5])
+```
+This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width. 
+
+Iris is a data frame with 
+- 150 cases (rows)  
+- 5 variables (columns) 
+
+
+Cluster Plot
+========================================================
+```{r, echo=TRUE}
+irisCluster <- kmeans(iris[,1:2], 3)
+plot(iris[,1:2], col = irisCluster$cluster, pch = 20, cex = 3)
+      points(irisCluster$centers, pch = 8, cex = 4, lwd = 4)
+
+```
+
+Web Application functionality
+========================================================
+The application: https://zsakierik.shinyapps.io/Course_Project/
+- Choose cluster number
+- Choose X and Y dimension
+- Choose method(k-means clustering or k-medoids clustering)
+
